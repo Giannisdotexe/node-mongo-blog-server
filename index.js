@@ -17,9 +17,9 @@ app.use(cors());
 
 app.use("/posts", postRoutes);
 app.use("/users", userRoutes);
-// app.use("/", (req, res) => {
-//   res.status(200).json("Hello I'm API");
-// });
+app.use("/", (req, res) => {
+  res.status(200).json("Hello I'm API");
+});
 
 const port = process.env.PORT;
 const mongoURL = process.env.DB_URL;
@@ -56,4 +56,4 @@ mongoose.set("useFindAndModify", false);
 //   res.send(JSON.stringify({ accessToken: accessToken }));
 // });
 
-// app.listen(3000);
+// app.listen(port);
